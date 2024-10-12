@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "LinkedIn Profile Extractor",
+  "version": "1.0",
+  "description": "Extrae datos del perfil de LinkedIn y los envía a un endpoint",
+  "permissions": ["activeTab"],
+  "host_permissions": ["http://127.0.0.1:8000/*"],
+  "action": {
+    "default_popup": "index.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.linkedin.com/in/*"],
+      "js": ["src/contentScript.js"]
+    }
+  ]
+}
